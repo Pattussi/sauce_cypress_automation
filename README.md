@@ -73,7 +73,7 @@ As histórias de usuário foram criadas com base em **requisitos funcionais** da
 1. Clone o repositório  
    ```bash
    git clone https://github.com/Pattussi/sauce_cypress_automation.git
-   cd sauce_cypress
+   cd sauce_cypress_automation
    ```
 
 2. Instale as dependências  
