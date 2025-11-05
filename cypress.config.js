@@ -7,15 +7,12 @@ module.exports = defineConfig({
     viewportWidth: 1366,
     viewportHeight: 768,
     defaultCommandTimeout: 8000,
-    setupNodeEvents(on, config) {
-      require("cypress-mochawesome-reporter/plugin")(on);
-    },
   },
-  reporter: "cypress-mochawesome-reporter",
+  reporter: "mochawesome",
   reporterOptions: {
     reportDir: "cypress/reports",
     overwrite: false,
     html: false,
-    json: true,
-  },
+    json: true
+  }
 });
