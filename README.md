@@ -1,101 +1,110 @@
-# Testes automatizados SauceDemo - sauce_cypress 🧪
+# 🧪 SauceDemo Cypress Automation
 
-Suite de testes automatizados para o site **Sauce Demo** (https://www.saucedemo.com).  
-O objetivo é validar os fluxos principais da aplicação de e-commerce, garantindo que o login, o filtro de produtos e o checkout estejam funcionando conforme o esperado.
+Suite de testes automatizados E2E desenvolvida com **Cypress** para o site [**Sauce Demo**](https://www.saucedemo.com).  
+O projeto garante a validação dos fluxos principais do e-commerce — **login**, **checkout** e **filtro de produtos** — seguindo boas práticas de QA e automação.
 
 ---
 
 ## 📌 Funcionalidades testadas
 
-As histórias de usuário foram criadas com base em **requisitos funcionais** da aplicação e estruturadas de acordo com boas práticas de QA.
+As histórias de usuário foram estruturadas com base nos **requisitos funcionais** da aplicação e organizadas por módulos.
 
 ### 🔐 US-001 - Login
-- O usuário deve conseguir realizar login com sucesso utilizando credenciais válidas.
-- Mensagem apropriada deve ser exibida para **usuário bloqueado**.
-- Validação de **campos obrigatórios**.
-- Login deve falhar para credenciais inválidas.
-- Logout deve encerrar a sessão corretamente.
-
-**Cenários (exemplos):**
-- Login válido.
-- Login com usuário bloqueado.
-- Login com campos vazios.
-- Logout bem-sucedido.
+- Login bem-sucedido com credenciais válidas.  
+- Exibição de mensagem de erro para **usuário bloqueado**.  
+- Validação dos **campos obrigatórios**.  
+- Mensagem para credenciais inválidas.  
+- Logout encerrando a sessão corretamente.  
+- Fechamento do alerta de erro ao clicar no botão “X”.
 
 ---
 
 ### 🛒 US-002 - Fluxo completo de compra
-- O usuário deve conseguir adicionar produtos ao carrinho.
-- Deve preencher as informações de checkout.
-- Deve concluir uma compra com sucesso.
-- Sistema deve exibir a mensagem de confirmação do pedido.
-
-**Cenário principal:**
-- Fluxo “happy path” da compra do início ao fim.
+- Adicionar produtos ao carrinho.  
+- Preencher formulário de checkout.  
+- Finalizar compra com sucesso.  
+- Exibir mensagem de confirmação do pedido.
 
 ---
 
-### 🧾 US-003 - Cadastro e Checkout
-- Campos obrigatórios: **Nome**, **Sobrenome** e **CEP (Zip Code)**.
-- O sistema deve exibir erro ao deixar campos obrigatórios vazios.
-- Validação individual de cada campo ausente.
-
-**Cenários (exemplos):**
-- Cadastro completo.
-- Tentativa de cadastro sem nome.
-- Tentativa de cadastro sem sobrenome.
-- Tentativa de cadastro sem CEP.
+### 🧾 US-003 - Cadastro no Checkout
+- Campos obrigatórios: **Nome**, **Sobrenome** e **CEP (Zip Code)**.  
+- Validação de erros para campos vazios individualmente.  
+- Cancelar checkout e retornar ao carrinho.
 
 ---
 
 ### 🧭 US-004 - Filtro e Ordenação de Produtos
-- O usuário deve conseguir ordenar produtos por:
-  - Preço (High to Low / Low to High)
-  - Ordem alfabética (A-Z / Z-A)
-- O sistema deve atualizar dinamicamente a lista conforme a seleção.
-
-**Cenários (exemplos):**
-- Ordenar por menor preço.
-- Ordenar por maior preço.
-- Ordenar de A-Z.
-- Ordenar de Z-A.
+- Ordenação por **preço** (High to Low / Low to High).  
+- Ordenação **alfabética** (A-Z / Z-A).  
+- Verificação da ordem padrão ao recarregar a página.
 
 ---
 
 ## 🧰 Tecnologias utilizadas
-- **Node.js / JavaScript**  
-- **Cypress** (framework de testes E2E)
+
+- **Node.js**  
+- **Cypress 14.3.3**  
+- **Mochawesome** (relatórios JSON/HTML)  
+- **Mochawesome Merge + Generator** (merge e geração final de relatórios)  
+- **GitHub Actions** (CI/CD automatizado)
 
 ---
 
-## 🚀 Como rodar os testes localmente
+## 🚀 Como executar os testes localmente
 
-1. Clone o repositório  
+1. Clone o repositório:
    ```bash
    git clone https://github.com/Pattussi/sauce_cypress_automation.git
    cd sauce_cypress_automation
    ```
 
-2. Instale as dependências  
+2. Instale as dependências:
    ```bash
    npm install
    ```
 
-3. Verifique a URL base configurada no cypress.config.js:  
-   ```bash
-   baseUrl: "https://www.saucedemo.com"
-   ```
-
-4. Execute os testes:  
-   - Modo interativo (com interface do Cypress):  
+3. Execute os testes localmente:
+   - **Modo interativo**:
      ```bash
      npx cypress open
      ```
-
-   - Modo headless (para CI/CD):  
+   - **Modo headless (linha de comando)**:
      ```bash
-     npx cypress run
+     npm run test
      ```
+   - **Execução completa (testes + relatório HTML):**
+     ```bash
+     npm run test:full
+     ```
+
+---
+
+## 📊 Relatórios de teste (Mochawesome)
+
+Após a execução do comando `npm run test:full`, os relatórios são gerados automaticamente em:
+
+```
+cypress/reports/html/mochawesome.html
+```
+
+📁 Caminho completo (Windows):
+```
+C:\Users\<seu_usuario>\Desktop\sauce_cypress_automation\cypress\reports\html\mochawesome.html
+```
+
+Abra o arquivo `.html` no navegador para visualizar o relatório final com os resultados dos testes.
+
+---
+
+## ⚙️ Integração CI/CD (GitHub Actions)
+
+O workflow automatiza:
+- Execução dos testes Cypress em ambiente **headless** (Chrome).  
+- Merge dos relatórios JSON.  
+- Geração e upload do relatório HTML e vídeos como artefatos.
+
+📄 Arquivo: `.github/workflows/cypress.yml`
 
 ---
 
@@ -105,48 +114,37 @@ As histórias de usuário foram criadas com base em **requisitos funcionais** da
 sauce_cypress_automation/
 │
 ├── cypress/
-│   ├── e2e/                # casos de teste (specs)
+│   ├── e2e/                   # Casos de teste (specs)
 │   │   ├── login.cy.js
 │   │   ├── filtro_produto.cy.js
 │   │   ├── cadastro_check_out.cy.js
 │   │   └── e2e-saucelabs.cy.js
-│   ├── fixtures/           # dados de teste
-│   └── support/            # comandos customizados e hooks
+│   ├── fixtures/              # Dados de teste
+│   └── support/               # Comandos customizados e hooks
 │
-├── cypress.config.js       # configuração Cypress
+├── scripts/
+│   └── generate-report.js     # Script de geração do relatório Mochawesome
+│
+├── cypress.config.js          # Configuração Cypress
 ├── package.json
 └── README.md
 ```
 
 ---
 
-## 🤝 Como contribuir
-
-1. Faça um fork do projeto
-
-2. Crie uma branch:  
-   ```bash
-   git checkout -b feature/nova-funcionalidade
-   ```
-
-3. Commit suas alterações  
-
-4. Push para o repositório remoto  
-
-5. Abra um Pull Request 🚀
-
----
-
 ## 🔮 Melhorias futuras
 
-- Adicionar testes de remover produtos do carrinho.  
-- Implementar validação visual com Cypress Studio.  
-- Integração com pipeline de CI/CD (GitHub Actions).  
+- Testes para **remoção de produtos do carrinho**.  
+- **Validação visual** com Cypress Studio.  
+- Adicionar **testes de performance e usabilidade**.  
+- Publicar o relatório Mochawesome como **página estática (GitHub Pages)**.
 
 ---
 
-## ✨ Sobre Mim
-Sou **Leonardo Pattussi**, profissional em transição para a área de **Qualidade de Software (QA)**.  
-Após mais de 12 anos atuando como gerente comercial, concluí o **Bootcamp QA da TripleTen**, aplicando agora minha experiência analítica e de processos para garantir a entrega de produtos digitais de qualidade.  
+## ✨ Sobre o autor
 
-📫 Contato: [pattussi@hotmail.com](mailto:pattussi@hotmail.com) | [LinkedIn](https://linkedin.com/in/leonardo-pattussi)
+Sou **Leonardo Pattussi**, profissional em transição para **Qualidade de Software (QA)**.  
+Após 12 anos na área comercial, concluí o **Bootcamp QA da TripleTen**, aplicando minha experiência analítica e de processos na garantia de qualidade de produtos digitais.
+
+📫 Contato: [pattussi@hotmail.com](mailto:pattussi@hotmail.com)  
+🔗 [LinkedIn](https://linkedin.com/in/leonardo-pattussi)

@@ -2,14 +2,14 @@
   "stats": {
     "suites": 1,
     "tests": 1,
-    "passes": 0,
+    "passes": 1,
     "pending": 0,
-    "failures": 1,
-    "start": "2025-11-05T00:30:48.756Z",
-    "end": "2025-11-05T00:30:49.265Z",
-    "duration": 509,
+    "failures": 0,
+    "start": "2025-11-05T22:02:41.514Z",
+    "end": "2025-11-05T22:02:51.232Z",
+    "duration": 9718,
     "testsRegistered": 1,
-    "passPercent": 0,
+    "passPercent": 100,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "5dd601c9-dafe-4efc-bbc8-60cd945ceb87",
+      "uuid": "d174e4ee-8fc1-44f6-bdde-b4b1d05a1c0b",
       "title": "",
       "fullFile": "cypress\\e2e\\e2e-saucelabs.cy.js",
       "file": "cypress\\e2e\\e2e-saucelabs.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "4dc62719-c724-4756-a741-d2e662284ba0",
+          "uuid": "e7fdfb42-1db8-44f9-83c6-271b9358c51f",
           "title": "US-002 - Fluxo completo de compra",
           "fullFile": "",
           "file": "",
@@ -38,33 +38,29 @@
               "title": "Deve concluir uma compra com sucesso",
               "fullTitle": "US-002 - Fluxo completo de compra Deve concluir uma compra com sucesso",
               "timedOut": null,
-              "duration": 334,
-              "state": "failed",
-              "speed": null,
-              "pass": false,
-              "fail": true,
+              "duration": 9543,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
               "pending": false,
               "context": null,
               "code": "_LoginPage.default.acessarSite();\n_LoginPage.default.fazerLogin('standard_user', 'secret_sauce');\n_ProductsPage.default.adicionarProdutoAoCarrinho();\n_ProductsPage.default.irParaCarrinho();\ncy.get('[data-test=\"checkout\"]').click();\n_CheckoutPage.default.preencherCadastro('Leonardo', 'Pattussi', '96000000');\ncy.get('[data-test=\"finish\"]').click();\ncy.get('.complete-header').should('contain.text', 'Thank you for your order!');",
-              "err": {
-                "message": "TypeError: _CheckoutPage.default.preencherCadastro is not a function",
-                "estack": "TypeError: _CheckoutPage.default.preencherCadastro is not a function\n    at Context.eval (webpack://sauce-cypress-automation/./cypress/e2e/e2e-saucelabs.cy.js:17:17)\n    at runnable.fn (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:140440:19)\n    at callFn (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:159518:21)\n    at Runnable.run (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:159505:7)\n    at <unknown> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:165577:30)\n    at PassThroughHandlerContext.finallyHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1546:18)",
-                "diff": null
-              },
-              "uuid": "5659be5f-b531-47b1-9199-030305f9e670",
-              "parentUUID": "4dc62719-c724-4756-a741-d2e662284ba0",
+              "err": {},
+              "uuid": "c3b01d7b-62f9-449a-8678-068e50e14c67",
+              "parentUUID": "e7fdfb42-1db8-44f9-83c6-271b9358c51f",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
-          "passes": [],
-          "failures": [
-            "5659be5f-b531-47b1-9199-030305f9e670"
+          "passes": [
+            "c3b01d7b-62f9-449a-8678-068e50e14c67"
           ],
+          "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 334,
+          "duration": 9543,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -103,7 +99,7 @@
         "html": false,
         "json": true
       },
-      "version": "6.3.1"
+      "version": "6.3.2"
     }
   }
 }

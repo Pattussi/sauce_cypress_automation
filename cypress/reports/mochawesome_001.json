@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-11-05T00:08:56.373Z",
-    "end": "2025-11-05T00:09:01.346Z",
-    "duration": 4973,
+    "start": "2025-11-05T21:42:03.444Z",
+    "end": "2025-11-05T21:42:10.563Z",
+    "duration": 7119,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "26f79e15-928a-41f6-aee7-f265414c84c6",
+      "uuid": "d4db47c3-781b-4326-87e2-b0eb6f160aba",
       "title": "",
       "fullFile": "cypress\\e2e\\e2e-saucelabs.cy.js",
       "file": "cypress\\e2e\\e2e-saucelabs.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "c2004eae-cdad-4051-bae4-3cf61394d1a3",
+          "uuid": "53361eb1-3eeb-4652-8264-1af921b7f9ad",
           "title": "US-002 - Fluxo completo de compra",
           "fullFile": "",
           "file": "",
@@ -38,29 +38,29 @@
               "title": "Deve concluir uma compra com sucesso",
               "fullTitle": "US-002 - Fluxo completo de compra Deve concluir uma compra com sucesso",
               "timedOut": null,
-              "duration": 4845,
+              "duration": 6966,
               "state": "passed",
-              "speed": "fast",
+              "speed": "medium",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
-              "code": "cy.log('Iniciando fluxo de compra completo');\ncy.login('standard_user', 'secret_sauce');\ncy.get('[data-test=\"add-to-cart-sauce-labs-backpack\"]').click();\ncy.get('[data-test=\"add-to-cart-sauce-labs-bike-light\"]').click();\ncy.log('🛍️ Indo para o carrinho');\ncy.get('[data-test=\"shopping-cart-link\"]').click();\ncy.get('[data-test=\"title\"]').should('contain.text', 'Your Cart');\ncy.get('[data-test=\"checkout\"]').click();\ncy.log('🧾 Preenchendo formulário de checkout');\ncy.preencherCadastro('Leonardo', 'Pattussi', '17262537');\ncy.get('[data-test=\"title\"]').should('contain.text', 'Checkout: Overview');\ncy.get('[data-test=\"finish\"]').click();\ncy.get('[data-test=\"complete-header\"]').should('contain.text', 'Thank you for your order!');",
+              "code": "_LoginPage.default.acessarSite();\n_LoginPage.default.fazerLogin('standard_user', 'secret_sauce');\n_ProductsPage.default.adicionarProdutoAoCarrinho();\n_ProductsPage.default.irParaCarrinho();\ncy.get('[data-test=\"checkout\"]').click();\n_CheckoutPage.default.preencherCadastro('Leonardo', 'Pattussi', '96000000');\ncy.get('[data-test=\"finish\"]').click();\ncy.get('.complete-header').should('contain.text', 'Thank you for your order!');",
               "err": {},
-              "uuid": "84aa6797-91b6-459f-b155-df1f381220be",
-              "parentUUID": "c2004eae-cdad-4051-bae4-3cf61394d1a3",
+              "uuid": "42a5074f-b1ac-46ee-a2fd-bbf50b54a694",
+              "parentUUID": "53361eb1-3eeb-4652-8264-1af921b7f9ad",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "84aa6797-91b6-459f-b155-df1f381220be"
+            "42a5074f-b1ac-46ee-a2fd-bbf50b54a694"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 4845,
+          "duration": 6966,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -99,7 +99,7 @@
         "html": false,
         "json": true
       },
-      "version": "6.3.1"
+      "version": "6.3.2"
     }
   }
 }

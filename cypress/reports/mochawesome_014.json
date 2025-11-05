@@ -2,14 +2,14 @@
   "stats": {
     "suites": 1,
     "tests": 5,
-    "passes": 4,
+    "passes": 5,
     "pending": 0,
-    "failures": 1,
-    "start": "2025-11-05T00:30:54.159Z",
-    "end": "2025-11-05T00:31:03.915Z",
-    "duration": 9756,
+    "failures": 0,
+    "start": "2025-11-05T22:02:58.769Z",
+    "end": "2025-11-05T22:03:10.060Z",
+    "duration": 11291,
     "testsRegistered": 5,
-    "passPercent": 80,
+    "passPercent": 100,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "f3046811-b19a-4cc3-ab61-c498417f2002",
+      "uuid": "a327969a-c218-4a0c-8c0f-1fcfe5533a61",
       "title": "",
       "fullFile": "cypress\\e2e\\filtro_produto.cy.js",
       "file": "cypress\\e2e\\filtro_produto.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "3123fd1e-10a4-44b7-aa5f-f67ff61679ab",
+          "uuid": "88331996-f2b4-4a07-ac7a-be092574ccef",
           "title": "US-004 - Funcionalidade: Ordenação de produtos",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Deve ordenar produtos por preço decrescente (High to Low)",
               "fullTitle": "US-004 - Funcionalidade: Ordenação de produtos Deve ordenar produtos por preço decrescente (High to Low)",
               "timedOut": null,
-              "duration": 3348,
+              "duration": 3942,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "_ProductsPage.default.selecionarFiltro('hilo');\ncy.get('.inventory_item_price').then(prices => {\n  const valores = [...prices].map(el => parseFloat(el.innerText.replace('$', '')));\n  const ordenado = [...valores].sort((a, b) => b - a);\n  expect(valores).to.deep.equal(ordenado);\n});",
               "err": {},
-              "uuid": "ca332550-d869-475c-82e0-144464f7bd04",
-              "parentUUID": "3123fd1e-10a4-44b7-aa5f-f67ff61679ab",
+              "uuid": "e361cd6c-8c57-49bd-a3b2-beeada730238",
+              "parentUUID": "88331996-f2b4-4a07-ac7a-be092574ccef",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "Deve ordenar produtos por preço crescente (Low to High)",
               "fullTitle": "US-004 - Funcionalidade: Ordenação de produtos Deve ordenar produtos por preço crescente (Low to High)",
               "timedOut": null,
-              "duration": 1420,
+              "duration": 1849,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -65,8 +65,8 @@
               "context": null,
               "code": "_ProductsPage.default.selecionarFiltro('lohi');\ncy.get('.inventory_item_price').then(prices => {\n  const valores = [...prices].map(el => parseFloat(el.innerText.replace('$', '')));\n  const ordenado = [...valores].sort((a, b) => a - b);\n  expect(valores).to.deep.equal(ordenado);\n});",
               "err": {},
-              "uuid": "7165e0af-6b56-45d7-b1be-9dad7617cb53",
-              "parentUUID": "3123fd1e-10a4-44b7-aa5f-f67ff61679ab",
+              "uuid": "0e88f969-9c4c-4e2f-94a8-3521bf8d8697",
+              "parentUUID": "88331996-f2b4-4a07-ac7a-be092574ccef",
               "isHook": false,
               "skipped": false
             },
@@ -74,7 +74,7 @@
               "title": "Deve ordenar produtos alfabeticamente (A-Z)",
               "fullTitle": "US-004 - Funcionalidade: Ordenação de produtos Deve ordenar produtos alfabeticamente (A-Z)",
               "timedOut": null,
-              "duration": 1660,
+              "duration": 2050,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -83,8 +83,8 @@
               "context": null,
               "code": "_ProductsPage.default.selecionarFiltro('az');\ncy.get('.inventory_item_name').then(items => {\n  const nomes = [...items].map(el => el.innerText);\n  const ordenado = [...nomes].sort();\n  expect(nomes).to.deep.equal(ordenado);\n});",
               "err": {},
-              "uuid": "5ff6c392-fce3-4afa-9fe4-db5b9ac57d3b",
-              "parentUUID": "3123fd1e-10a4-44b7-aa5f-f67ff61679ab",
+              "uuid": "67e6ddcf-2f1e-4482-9321-2fe7d5dee488",
+              "parentUUID": "88331996-f2b4-4a07-ac7a-be092574ccef",
               "isHook": false,
               "skipped": false
             },
@@ -92,7 +92,7 @@
               "title": "Deve ordenar produtos alfabeticamente (Z-A)",
               "fullTitle": "US-004 - Funcionalidade: Ordenação de produtos Deve ordenar produtos alfabeticamente (Z-A)",
               "timedOut": null,
-              "duration": 1256,
+              "duration": 1586,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -101,8 +101,8 @@
               "context": null,
               "code": "_ProductsPage.default.selecionarFiltro('za');\ncy.get('.inventory_item_name').then(items => {\n  const nomes = [...items].map(el => el.innerText);\n  const ordenado = [...nomes].sort().reverse();\n  expect(nomes).to.deep.equal(ordenado);\n});",
               "err": {},
-              "uuid": "00b20d19-fc0d-4f02-b68b-7ad867eccaa1",
-              "parentUUID": "3123fd1e-10a4-44b7-aa5f-f67ff61679ab",
+              "uuid": "89fa8df1-fda7-4758-84e5-053b5e97bc28",
+              "parentUUID": "88331996-f2b4-4a07-ac7a-be092574ccef",
               "isHook": false,
               "skipped": false
             },
@@ -110,38 +110,33 @@
               "title": "Deve manter ordem padrão ao carregar a página",
               "fullTitle": "US-004 - Funcionalidade: Ordenação de produtos Deve manter ordem padrão ao carregar a página",
               "timedOut": null,
-              "duration": 1547,
-              "state": "failed",
-              "speed": null,
-              "pass": false,
-              "fail": true,
+              "duration": 1406,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
               "pending": false,
               "context": null,
-              "code": "cy.url().should('include', '/inventory.html');\n_ProductsPage.default.validarOrdemEsperada();",
-              "err": {
-                "message": "AssertionError: expected [ Array(6) ] to deeply equal undefined",
-                "estack": "AssertionError: expected [ Array(6) ] to deeply equal undefined\n    at Context.eval (webpack://sauce-cypress-automation/./cypress/pages/ProductsPage.js:20:29)\n    at getRet (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:119616:20)\n    at tryCatcher (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:4285:29)",
-                "diff": null
-              },
-              "uuid": "ceb20291-ba36-4d02-b2f5-02fe1eef756f",
-              "parentUUID": "3123fd1e-10a4-44b7-aa5f-f67ff61679ab",
+              "code": "cy.url().should('include', '/inventory.html');\n_ProductsPage.default.validarOrdemEsperada(['Sauce Labs Backpack', 'Sauce Labs Bike Light', 'Sauce Labs Bolt T-Shirt', 'Sauce Labs Fleece Jacket', 'Sauce Labs Onesie', 'Test.allTheThings() T-Shirt (Red)']);",
+              "err": {},
+              "uuid": "242f224e-5baa-4bfc-a5a1-a0b4f3a1bd30",
+              "parentUUID": "88331996-f2b4-4a07-ac7a-be092574ccef",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "ca332550-d869-475c-82e0-144464f7bd04",
-            "7165e0af-6b56-45d7-b1be-9dad7617cb53",
-            "5ff6c392-fce3-4afa-9fe4-db5b9ac57d3b",
-            "00b20d19-fc0d-4f02-b68b-7ad867eccaa1"
+            "e361cd6c-8c57-49bd-a3b2-beeada730238",
+            "0e88f969-9c4c-4e2f-94a8-3521bf8d8697",
+            "67e6ddcf-2f1e-4482-9321-2fe7d5dee488",
+            "89fa8df1-fda7-4758-84e5-053b5e97bc28",
+            "242f224e-5baa-4bfc-a5a1-a0b4f3a1bd30"
           ],
-          "failures": [
-            "ceb20291-ba36-4d02-b2f5-02fe1eef756f"
-          ],
+          "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 9231,
+          "duration": 10833,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -180,7 +175,7 @@
         "html": false,
         "json": true
       },
-      "version": "6.3.1"
+      "version": "6.3.2"
     }
   }
 }

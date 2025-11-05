@@ -6,15 +6,16 @@
   "author": "Leonardo Gallardo",
   "license": "MIT",
   "scripts": {
-    "test": "cypress run",
-    "cypress:open": "cypress open",
-    "cypress:run": "cypress run --browser chrome",
-    "test:ci": "cypress run --headless --browser chrome"
+    "test": "npx cypress run --reporter mochawesome",
+    "report": "node ./scripts/generate-report.js",
+    "open:report": "node ./scripts/open-report.js",
+    "test:full": "npm run test && npm run report && npm run open:report"
   },
   "devDependencies": {
     "cypress": "^14.3.3",
     "mochawesome": "^7.1.3",
     "mochawesome-merge": "^4.3.0",
-    "mochawesome-report-generator": "^6.3.2"
+    "mochawesome-report-generator": "^6.3.2",
+    "open": "^10.2.0"
   }
 }

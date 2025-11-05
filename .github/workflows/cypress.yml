@@ -1,4 +1,4 @@
-name: cypress-tests
+name: Cypress Tests
 
 on:
   push:
@@ -6,42 +6,33 @@ on:
   pull_request:
 
 jobs:
-  test:
+  cypress-run:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout código
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Configurar Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      - name: Instalar dependências
+      - name: Install dependencies
         run: npm ci
 
-      - name: Executar testes Cypress (modo headless)
-        run: npx cypress run --browser chrome
-
-      - name: Mesclar relatórios JSON (Mochawesome)
+      - name: Run Cypress tests and generate report
         run: |
-          npx mochawesome-merge cypress/reports/*.json > cypress/reports/report.json
+          rm -rf cypress/reports || true
+          npm run test:full
 
-      - name: Gerar relatório HTML (Mochawesome Report Generator)
-        run: |
-          npx mochawesome-report-generator cypress/reports/report.json \
-            --reportDir cypress/reports/html \
-            --reportTitle "Relatório de Testes SauceDemo" \
-            --inlineAssets true
-
-      - name: Upload do relatório HTML
+      - name: Upload HTML report
         uses: actions/upload-artifact@v4
         with:
           name: mochawesome-report
           path: cypress/reports/html
 
-      - name: Upload dos vídeos dos testes
+      - name: Upload Cypress videos
         uses: actions/upload-artifact@v4
         with:
           name: cypress-videos

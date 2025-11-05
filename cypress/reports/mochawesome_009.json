@@ -2,14 +2,14 @@
   "stats": {
     "suites": 1,
     "tests": 1,
-    "passes": 0,
+    "passes": 1,
     "pending": 0,
-    "failures": 1,
-    "start": "2025-11-05T00:25:27.745Z",
-    "end": "2025-11-05T00:25:28.129Z",
-    "duration": 384,
+    "failures": 0,
+    "start": "2025-11-05T21:56:30.846Z",
+    "end": "2025-11-05T21:56:37.465Z",
+    "duration": 6619,
     "testsRegistered": 1,
-    "passPercent": 0,
+    "passPercent": 100,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "a0b64d9f-666e-4621-a0d9-40d955afa662",
+      "uuid": "60f2b789-1798-4524-97a5-8420d068abf9",
       "title": "",
       "fullFile": "cypress\\e2e\\e2e-saucelabs.cy.js",
       "file": "cypress\\e2e\\e2e-saucelabs.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "8a6d61b1-fab4-47a5-8fd9-4d71db4a81c4",
+          "uuid": "7055cd95-ce2c-445d-9f74-7120f608450d",
           "title": "US-002 - Fluxo completo de compra",
           "fullFile": "",
           "file": "",
@@ -38,33 +38,29 @@
               "title": "Deve concluir uma compra com sucesso",
               "fullTitle": "US-002 - Fluxo completo de compra Deve concluir uma compra com sucesso",
               "timedOut": null,
-              "duration": 249,
-              "state": "failed",
-              "speed": null,
-              "pass": false,
-              "fail": true,
+              "duration": 6528,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
               "pending": false,
               "context": null,
               "code": "_LoginPage.default.acessarSite();\n_LoginPage.default.fazerLogin('standard_user', 'secret_sauce');\n_ProductsPage.default.adicionarProdutoAoCarrinho();\n_ProductsPage.default.irParaCarrinho();\ncy.get('[data-test=\"checkout\"]').click();\n_CheckoutPage.default.preencherCadastro('Leonardo', 'Pattussi', '96000000');\ncy.get('[data-test=\"finish\"]').click();\ncy.get('.complete-header').should('contain.text', 'Thank you for your order!');",
-              "err": {
-                "message": "TypeError: _ProductsPage.default.adicionarProdutoAoCarrinho is not a function",
-                "estack": "TypeError: _ProductsPage.default.adicionarProdutoAoCarrinho is not a function\n    at Context.eval (webpack://sauce-cypress-automation/./cypress/e2e/e2e-saucelabs.cy.js:13:17)\n    at runnable.fn (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:140440:19)\n    at callFn (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:159518:21)\n    at Runnable.run (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:159505:7)\n    at <unknown> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:165577:30)\n    at PassThroughHandlerContext.finallyHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1546:18)",
-                "diff": null
-              },
-              "uuid": "8a86da13-152d-4deb-84a5-b2df39da9fc8",
-              "parentUUID": "8a6d61b1-fab4-47a5-8fd9-4d71db4a81c4",
+              "err": {},
+              "uuid": "f6882e7a-bf16-48e4-805d-36d718906901",
+              "parentUUID": "7055cd95-ce2c-445d-9f74-7120f608450d",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
-          "passes": [],
-          "failures": [
-            "8a86da13-152d-4deb-84a5-b2df39da9fc8"
+          "passes": [
+            "f6882e7a-bf16-48e4-805d-36d718906901"
           ],
+          "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 249,
+          "duration": 6528,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -103,7 +99,7 @@
         "html": false,
         "json": true
       },
-      "version": "6.3.1"
+      "version": "6.3.2"
     }
   }
 }
