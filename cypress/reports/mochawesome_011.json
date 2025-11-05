@@ -1,0 +1,240 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 7,
+    "passes": 2,
+    "pending": 0,
+    "failures": 5,
+    "start": "2025-11-05T00:25:52.062Z",
+    "end": "2025-11-05T00:26:01.782Z",
+    "duration": 9720,
+    "testsRegistered": 7,
+    "passPercent": 28.57142857142857,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "8472b8e4-711e-42d8-b38d-221d85310dc7",
+      "title": "",
+      "fullFile": "cypress\\e2e\\login.cy.js",
+      "file": "cypress\\e2e\\login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ce19358c-2461-4b6e-8303-4221f051f55a",
+          "title": "US-001 - Funcionalidade: Página de Login",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve realizar login com sucesso",
+              "fullTitle": "US-001 - Funcionalidade: Página de Login Deve realizar login com sucesso",
+              "timedOut": null,
+              "duration": 2025,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.log(' Tentando login com credenciais válidas');\n_LoginPage.default.fazerLogin('standard_user', 'secret_sauce');\n_LoginPage.default.validarLoginSucesso();",
+              "err": {
+                "message": "TypeError: _LoginPage.default.validarLoginSucesso is not a function",
+                "estack": "TypeError: _LoginPage.default.validarLoginSucesso is not a function\n    at Context.eval (webpack://sauce-cypress-automation/./cypress/e2e/login.cy.js:14:14)\n    at runnable.fn (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:140440:19)\n    at callFn (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:159518:21)\n    at Runnable.run (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:159505:7)\n    at <unknown> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:165577:30)\n    at PassThroughHandlerContext.finallyHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1546:18)",
+                "diff": null
+              },
+              "uuid": "86a3a10d-0a63-400a-a57e-5f46c21538ca",
+              "parentUUID": "ce19358c-2461-4b6e-8303-4221f051f55a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve exibir mensagem para usuário bloqueado",
+              "fullTitle": "US-001 - Funcionalidade: Página de Login Deve exibir mensagem para usuário bloqueado",
+              "timedOut": null,
+              "duration": 956,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "_LoginPage.default.fazerLogin('standard_user', 'secret_sauce');\n_LoginPage.default.validarMensagemErro('Epic sadface: Sorry, this user has been locked out.');",
+              "err": {
+                "message": "TypeError: _LoginPage.default.validarMensagemErro is not a function",
+                "estack": "TypeError: _LoginPage.default.validarMensagemErro is not a function\n    at Context.eval (webpack://sauce-cypress-automation/./cypress/e2e/login.cy.js:19:14)\n    at runnable.fn (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:140440:19)\n    at callFn (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:159518:21)\n    at Runnable.run (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:159505:7)\n    at <unknown> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:165577:30)\n    at PassThroughHandlerContext.finallyHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1546:18)",
+                "diff": null
+              },
+              "uuid": "93b0d0d8-4ca7-4df2-ac73-f55f55d6d3df",
+              "parentUUID": "ce19358c-2461-4b6e-8303-4221f051f55a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve validar campo usuário obrigatório",
+              "fullTitle": "US-001 - Funcionalidade: Página de Login Deve validar campo usuário obrigatório",
+              "timedOut": null,
+              "duration": 640,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "_LoginPage.default.fazerLogin('', 'secret_sauce');\n_LoginPage.default.validarMensagemErro('Epic sadface: Username is required');",
+              "err": {
+                "message": "TypeError: _LoginPage.default.validarMensagemErro is not a function",
+                "estack": "TypeError: _LoginPage.default.validarMensagemErro is not a function\n    at Context.eval (webpack://sauce-cypress-automation/./cypress/e2e/login.cy.js:24:14)\n    at runnable.fn (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:140440:19)\n    at callFn (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:159518:21)\n    at Runnable.run (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:159505:7)\n    at <unknown> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:165577:30)\n    at PassThroughHandlerContext.finallyHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1546:18)",
+                "diff": null
+              },
+              "uuid": "ec7ed7ec-be47-41f9-84c6-384cf96421ef",
+              "parentUUID": "ce19358c-2461-4b6e-8303-4221f051f55a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve validar campo senha obrigatório",
+              "fullTitle": "US-001 - Funcionalidade: Página de Login Deve validar campo senha obrigatório",
+              "timedOut": null,
+              "duration": 754,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "_LoginPage.default.fazerLoginLogin('standard_user', '');\n_LoginPage.default.validarMensagemErro('Epic sadface: Password is required');",
+              "err": {
+                "message": "TypeError: _LoginPage.default.fazerLoginLogin is not a function",
+                "estack": "TypeError: _LoginPage.default.fazerLoginLogin is not a function\n    at Context.eval (webpack://sauce-cypress-automation/./cypress/e2e/login.cy.js:28:14)\n    at runnable.fn (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:140440:19)\n    at callFn (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:159518:21)\n    at Runnable.run (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:159505:7)\n    at <unknown> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:165577:30)\n    at PassThroughHandlerContext.finallyHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1546:18)",
+                "diff": null
+              },
+              "uuid": "a16f1526-2739-4820-8ae6-6a635c7cd3b1",
+              "parentUUID": "ce19358c-2461-4b6e-8303-4221f051f55a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve realizar logout com sucesso",
+              "fullTitle": "US-001 - Funcionalidade: Página de Login Deve realizar logout com sucesso",
+              "timedOut": null,
+              "duration": 2098,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_LoginPage.default.fazerLogin('standard_user', 'secret_sauce');\ncy.logout();\ncy.get('[data-test=\"login-button\"]').should('have.value', 'Login');",
+              "err": {},
+              "uuid": "1c1cc975-4bd9-4903-8ba4-6ebaf4ff7d68",
+              "parentUUID": "ce19358c-2461-4b6e-8303-4221f051f55a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve exibir mensagem para credenciais inválidas",
+              "fullTitle": "US-001 - Funcionalidade: Página de Login Deve exibir mensagem para credenciais inválidas",
+              "timedOut": null,
+              "duration": 1614,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "_LoginPage.default.fazerLogin('standard_user', 'senha_errada');\n_LoginPage.default.validarMensagemErro('Epic sadface: Username and password do not match');",
+              "err": {
+                "message": "TypeError: _LoginPage.default.validarMensagemErro is not a function",
+                "estack": "TypeError: _LoginPage.default.validarMensagemErro is not a function\n    at Context.eval (webpack://sauce-cypress-automation/./cypress/e2e/login.cy.js:40:14)\n    at runnable.fn (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:140440:19)\n    at callFn (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:159518:21)\n    at Runnable.run (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:159505:7)\n    at <unknown> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:165577:30)\n    at PassThroughHandlerContext.finallyHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1546:18)",
+                "diff": null
+              },
+              "uuid": "70775e17-5bb5-4639-a1e5-19daeb7d3b2e",
+              "parentUUID": "ce19358c-2461-4b6e-8303-4221f051f55a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve fechar alerta de erro ao clicar no botão X",
+              "fullTitle": "US-001 - Funcionalidade: Página de Login Deve fechar alerta de erro ao clicar no botão X",
+              "timedOut": null,
+              "duration": 506,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_LoginPage.default.fazerLogin('', '');\ncy.get('.error-button').click();\ncy.get('[data-test=\"error\"]').should('not.exist');",
+              "err": {},
+              "uuid": "289f3a67-3ff4-427b-960f-f51bcbad16f8",
+              "parentUUID": "ce19358c-2461-4b6e-8303-4221f051f55a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "1c1cc975-4bd9-4903-8ba4-6ebaf4ff7d68",
+            "289f3a67-3ff4-427b-960f-f51bcbad16f8"
+          ],
+          "failures": [
+            "86a3a10d-0a63-400a-a57e-5f46c21538ca",
+            "93b0d0d8-4ca7-4df2-ac73-f55f55d6d3df",
+            "ec7ed7ec-be47-41f9-84c6-384cf96421ef",
+            "a16f1526-2739-4820-8ae6-6a635c7cd3b1",
+            "70775e17-5bb5-4639-a1e5-19daeb7d3b2e"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 8593,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.1"
+    }
+  }
+}

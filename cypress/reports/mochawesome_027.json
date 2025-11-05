@@ -1,0 +1,224 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 7,
+    "passes": 6,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-11-05T00:52:54.522Z",
+    "end": "2025-11-05T00:53:17.359Z",
+    "duration": 22837,
+    "testsRegistered": 7,
+    "passPercent": 85.71428571428571,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "30d90cad-2f90-4580-b856-fb8d28806f5e",
+      "title": "",
+      "fullFile": "cypress\\e2e\\login.cy.js",
+      "file": "cypress\\e2e\\login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "4d7b919f-6b20-4303-b315-94e4bea19b4b",
+          "title": "US-001 - Funcionalidade: Página de Login",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve realizar login com sucesso",
+              "fullTitle": "US-001 - Funcionalidade: Página de Login Deve realizar login com sucesso",
+              "timedOut": null,
+              "duration": 3630,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.log(' Tentando login com credenciais válidas');\n_LoginPage.default.fazerLogin('standard_user', 'secret_sauce');\n_LoginPage.default.validarLoginSucesso();",
+              "err": {},
+              "uuid": "ca1eae1b-e483-4c84-a680-fb6f6cdfd91d",
+              "parentUUID": "4d7b919f-6b20-4303-b315-94e4bea19b4b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve exibir mensagem para usuário bloqueado",
+              "fullTitle": "US-001 - Funcionalidade: Página de Login Deve exibir mensagem para usuário bloqueado",
+              "timedOut": null,
+              "duration": 11763,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "_LoginPage.default.fazerLogin('standard_user', 'secret_sauce');\n_LoginPage.default.validarMensagemErro('Epic sadface: Sorry, this user has been locked out.');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `[data-test=\"error\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `[data-test=\"error\"]`, but never found it.\n    at LoginPage.validarMensagemErro (webpack://sauce-cypress-automation/./cypress/pages/LoginPage.js:32:7)\n    at Context.eval (webpack://sauce-cypress-automation/./cypress/e2e/login.cy.js:19:14)",
+                "diff": null
+              },
+              "uuid": "f3b6bd29-ca54-40a1-8fac-2b29d6f55583",
+              "parentUUID": "4d7b919f-6b20-4303-b315-94e4bea19b4b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve validar campo usuário obrigatório",
+              "fullTitle": "US-001 - Funcionalidade: Página de Login Deve validar campo usuário obrigatório",
+              "timedOut": null,
+              "duration": 1616,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_LoginPage.default.fazerLogin('', 'secret_sauce');\n_LoginPage.default.validarMensagemErro('Epic sadface: Username is required');",
+              "err": {},
+              "uuid": "baf3f428-8571-4594-8ca7-e2d0352ec766",
+              "parentUUID": "4d7b919f-6b20-4303-b315-94e4bea19b4b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve validar campo senha obrigatório",
+              "fullTitle": "US-001 - Funcionalidade: Página de Login Deve validar campo senha obrigatório",
+              "timedOut": null,
+              "duration": 878,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_LoginPage.default.fazerLogin('standard_user', '');\n_LoginPage.default.validarMensagemErro('Epic sadface: Password is required');",
+              "err": {},
+              "uuid": "e6a73cda-37f6-4725-899d-565270f0315a",
+              "parentUUID": "4d7b919f-6b20-4303-b315-94e4bea19b4b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve realizar logout com sucesso",
+              "fullTitle": "US-001 - Funcionalidade: Página de Login Deve realizar logout com sucesso",
+              "timedOut": null,
+              "duration": 1812,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_LoginPage.default.fazerLogin('standard_user', 'secret_sauce');\ncy.logout();\ncy.get('[data-test=\"login-button\"]').should('have.value', 'Login');",
+              "err": {},
+              "uuid": "d62b2dca-e604-4b9d-9724-17aeb6c8a65a",
+              "parentUUID": "4d7b919f-6b20-4303-b315-94e4bea19b4b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve exibir mensagem para credenciais inválidas",
+              "fullTitle": "US-001 - Funcionalidade: Página de Login Deve exibir mensagem para credenciais inválidas",
+              "timedOut": null,
+              "duration": 1215,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_LoginPage.default.fazerLogin('standard_user', 'senha_errada');\n_LoginPage.default.validarMensagemErro('Epic sadface: Username and password do not match');",
+              "err": {},
+              "uuid": "1a32261e-d76c-4786-b096-64752fd0405f",
+              "parentUUID": "4d7b919f-6b20-4303-b315-94e4bea19b4b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve fechar alerta de erro ao clicar no botão X",
+              "fullTitle": "US-001 - Funcionalidade: Página de Login Deve fechar alerta de erro ao clicar no botão X",
+              "timedOut": null,
+              "duration": 1169,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_LoginPage.default.fazerLogin('', '');\ncy.get('.error-button').click();\ncy.get('[data-test=\"error\"]').should('not.exist');",
+              "err": {},
+              "uuid": "7d53fcad-3a39-4366-806d-98d38a32aaf3",
+              "parentUUID": "4d7b919f-6b20-4303-b315-94e4bea19b4b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ca1eae1b-e483-4c84-a680-fb6f6cdfd91d",
+            "baf3f428-8571-4594-8ca7-e2d0352ec766",
+            "e6a73cda-37f6-4725-899d-565270f0315a",
+            "d62b2dca-e604-4b9d-9724-17aeb6c8a65a",
+            "1a32261e-d76c-4786-b096-64752fd0405f",
+            "7d53fcad-3a39-4366-806d-98d38a32aaf3"
+          ],
+          "failures": [
+            "f3b6bd29-ca54-40a1-8fac-2b29d6f55583"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 22083,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.1"
+    }
+  }
+}

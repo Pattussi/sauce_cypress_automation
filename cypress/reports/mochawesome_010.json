@@ -1,0 +1,201 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 0,
+    "pending": 0,
+    "failures": 5,
+    "start": "2025-11-05T00:25:33.690Z",
+    "end": "2025-11-05T00:25:46.520Z",
+    "duration": 12830,
+    "testsRegistered": 5,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "39a28b97-80a3-45df-beae-ce6f6dc745ad",
+      "title": "",
+      "fullFile": "cypress\\e2e\\filtro_produto.cy.js",
+      "file": "cypress\\e2e\\filtro_produto.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "90d0fe96-0cd3-4792-b15a-08a17be8d8ea",
+          "title": "US-004 - Funcionalidade: Ordenação de produtos",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve ordenar produtos por preço decrescente (High to Low)",
+              "fullTitle": "US-004 - Funcionalidade: Ordenação de produtos Deve ordenar produtos por preço decrescente (High to Low)",
+              "timedOut": null,
+              "duration": 4232,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "_ProductsPage.default.selecionarFiltro('hilo');\ncy.get('.inventory_item_price').then(prices => {\n  const valores = [...prices].map(el => parseFloat(el.innerText.replace('$', '')));\n  const ordenado = [...valores].sort((a, b) => b - a);\n  expect(valores).to.deep.equal(ordenado);\n});",
+              "err": {
+                "message": "TypeError: _ProductsPage.default.selecionarFiltro is not a function",
+                "estack": "TypeError: _ProductsPage.default.selecionarFiltro is not a function\n    at Context.eval (webpack://sauce-cypress-automation/./cypress/e2e/filtro_produto.cy.js:14:17)\n    at runnable.fn (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:140440:19)\n    at callFn (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:159518:21)\n    at Runnable.run (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:159505:7)\n    at <unknown> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:165577:30)\n    at PassThroughHandlerContext.finallyHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1546:18)",
+                "diff": null
+              },
+              "uuid": "8a6ffb5f-e35f-481f-8b60-de4067d71be0",
+              "parentUUID": "90d0fe96-0cd3-4792-b15a-08a17be8d8ea",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve ordenar produtos por preço crescente (Low to High)",
+              "fullTitle": "US-004 - Funcionalidade: Ordenação de produtos Deve ordenar produtos por preço crescente (Low to High)",
+              "timedOut": null,
+              "duration": 2051,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "_ProductsPage.default.selecionarFiltro('lohi');\ncy.get('.inventory_item_price').then(prices => {\n  const valores = [...prices].map(el => parseFloat(el.innerText.replace('$', '')));\n  const ordenado = [...valores].sort((a, b) => a - b);\n  expect(valores).to.deep.equal(ordenado);\n});",
+              "err": {
+                "message": "TypeError: _ProductsPage.default.selecionarFiltro is not a function",
+                "estack": "TypeError: _ProductsPage.default.selecionarFiltro is not a function\n    at Context.eval (webpack://sauce-cypress-automation/./cypress/e2e/filtro_produto.cy.js:23:17)\n    at runnable.fn (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:140440:19)\n    at callFn (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:159518:21)\n    at Runnable.run (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:159505:7)\n    at <unknown> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:165577:30)\n    at PassThroughHandlerContext.finallyHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1546:18)",
+                "diff": null
+              },
+              "uuid": "e29d60d7-3e29-46e6-93a1-9f38cfa258b7",
+              "parentUUID": "90d0fe96-0cd3-4792-b15a-08a17be8d8ea",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve ordenar produtos alfabeticamente (A-Z)",
+              "fullTitle": "US-004 - Funcionalidade: Ordenação de produtos Deve ordenar produtos alfabeticamente (A-Z)",
+              "timedOut": null,
+              "duration": 2030,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "_ProductsPage.default.selecionarFiltro('az');\ncy.get('.inventory_item_name').then(items => {\n  const nomes = [...items].map(el => el.innerText);\n  const ordenado = [...nomes].sort();\n  expect(nomes).to.deep.equal(ordenado);\n});",
+              "err": {
+                "message": "TypeError: _ProductsPage.default.selecionarFiltro is not a function",
+                "estack": "TypeError: _ProductsPage.default.selecionarFiltro is not a function\n    at Context.eval (webpack://sauce-cypress-automation/./cypress/e2e/filtro_produto.cy.js:32:17)\n    at runnable.fn (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:140440:19)\n    at callFn (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:159518:21)\n    at Runnable.run (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:159505:7)\n    at <unknown> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:165577:30)\n    at PassThroughHandlerContext.finallyHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1546:18)",
+                "diff": null
+              },
+              "uuid": "3d917ce4-414a-4962-a6b9-97f38503db59",
+              "parentUUID": "90d0fe96-0cd3-4792-b15a-08a17be8d8ea",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve ordenar produtos alfabeticamente (Z-A)",
+              "fullTitle": "US-004 - Funcionalidade: Ordenação de produtos Deve ordenar produtos alfabeticamente (Z-A)",
+              "timedOut": null,
+              "duration": 1772,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "_ProductsPage.default.selecionarFiltro('za');\ncy.get('.inventory_item_name').then(items => {\n  const nomes = [...items].map(el => el.innerText);\n  const ordenado = [...nomes].sort().reverse();\n  expect(nomes).to.deep.equal(ordenado);\n});",
+              "err": {
+                "message": "TypeError: _ProductsPage.default.selecionarFiltro is not a function",
+                "estack": "TypeError: _ProductsPage.default.selecionarFiltro is not a function\n    at Context.eval (webpack://sauce-cypress-automation/./cypress/e2e/filtro_produto.cy.js:41:17)\n    at runnable.fn (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:140440:19)\n    at callFn (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:159518:21)\n    at Runnable.run (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:159505:7)\n    at <unknown> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:165577:30)\n    at PassThroughHandlerContext.finallyHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1546:18)",
+                "diff": null
+              },
+              "uuid": "d64c5f0a-1bf4-427a-a6f2-5e74c51c42f5",
+              "parentUUID": "90d0fe96-0cd3-4792-b15a-08a17be8d8ea",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve manter ordem padrão ao carregar a página",
+              "fullTitle": "US-004 - Funcionalidade: Ordenação de produtos Deve manter ordem padrão ao carregar a página",
+              "timedOut": null,
+              "duration": 1852,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.url().should('include', '/inventory.html');\n_ProductsPage.default.validarOrdemEsperada();",
+              "err": {
+                "message": "TypeError: _ProductsPage.default.validarOrdemEsperada is not a function",
+                "estack": "TypeError: _ProductsPage.default.validarOrdemEsperada is not a function\n    at Context.eval (webpack://sauce-cypress-automation/./cypress/e2e/filtro_produto.cy.js:51:17)\n    at runnable.fn (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:140440:19)\n    at callFn (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:159518:21)\n    at Runnable.run (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:159505:7)\n    at <unknown> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:165577:30)\n    at PassThroughHandlerContext.finallyHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1546:18)",
+                "diff": null
+              },
+              "uuid": "a8ada97d-0b5c-4542-a408-f3bc58ab25ff",
+              "parentUUID": "90d0fe96-0cd3-4792-b15a-08a17be8d8ea",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "8a6ffb5f-e35f-481f-8b60-de4067d71be0",
+            "e29d60d7-3e29-46e6-93a1-9f38cfa258b7",
+            "3d917ce4-414a-4962-a6b9-97f38503db59",
+            "d64c5f0a-1bf4-427a-a6f2-5e74c51c42f5",
+            "a8ada97d-0b5c-4542-a408-f3bc58ab25ff"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 11937,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.1"
+    }
+  }
+}

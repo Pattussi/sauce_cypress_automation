@@ -1,0 +1,247 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 7,
+    "passes": 0,
+    "pending": 0,
+    "failures": 7,
+    "start": "2025-11-05T00:21:41.605Z",
+    "end": "2025-11-05T00:21:49.888Z",
+    "duration": 8283,
+    "testsRegistered": 7,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "fd49ee32-11e8-433f-8431-4a09ce0cde26",
+      "title": "",
+      "fullFile": "cypress\\e2e\\login.cy.js",
+      "file": "cypress\\e2e\\login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "189aa8d5-fb4a-4f1c-bce0-3a11f7a74f77",
+          "title": "US-001 - Funcionalidade: Página de Login",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve realizar login com sucesso",
+              "fullTitle": "US-001 - Funcionalidade: Página de Login Deve realizar login com sucesso",
+              "timedOut": null,
+              "duration": 2967,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.log(' Tentando login com credenciais válidas');\n_LoginPage.default.realizarLogin('standard_user', 'secret_sauce');\n_LoginPage.default.validarLoginSucesso();",
+              "err": {
+                "message": "TypeError: _LoginPage.default.realizarLogin is not a function",
+                "estack": "TypeError: _LoginPage.default.realizarLogin is not a function\n    at Context.eval (webpack://sauce-cypress-automation/./cypress/e2e/login.cy.js:13:14)\n    at runnable.fn (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:140440:19)\n    at callFn (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:159518:21)\n    at Runnable.run (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:159505:7)\n    at <unknown> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:165577:30)\n    at PassThroughHandlerContext.finallyHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1546:18)",
+                "diff": null
+              },
+              "uuid": "3526b76b-151e-42d6-8dfd-7455b4db70a2",
+              "parentUUID": "189aa8d5-fb4a-4f1c-bce0-3a11f7a74f77",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve exibir mensagem para usuário bloqueado",
+              "fullTitle": "US-001 - Funcionalidade: Página de Login Deve exibir mensagem para usuário bloqueado",
+              "timedOut": null,
+              "duration": 794,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "_LoginPage.default.realizarLogin('locked_out_user', 'secret_sauce');\n_LoginPage.default.validarMensagemErro('Epic sadface: Sorry, this user has been locked out.');",
+              "err": {
+                "message": "TypeError: _LoginPage.default.realizarLogin is not a function",
+                "estack": "TypeError: _LoginPage.default.realizarLogin is not a function\n    at Context.eval (webpack://sauce-cypress-automation/./cypress/e2e/login.cy.js:18:14)\n    at runnable.fn (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:140440:19)\n    at callFn (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:159518:21)\n    at Runnable.run (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:159505:7)\n    at <unknown> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:165577:30)\n    at PassThroughHandlerContext.finallyHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1546:18)",
+                "diff": null
+              },
+              "uuid": "d90dd445-1daa-4d0a-9c90-f4d3b8f48359",
+              "parentUUID": "189aa8d5-fb4a-4f1c-bce0-3a11f7a74f77",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve validar campo usuário obrigatório",
+              "fullTitle": "US-001 - Funcionalidade: Página de Login Deve validar campo usuário obrigatório",
+              "timedOut": null,
+              "duration": 664,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "_LoginPage.default.realizarLogin('', 'secret_sauce');\n_LoginPage.default.validarMensagemErro('Epic sadface: Username is required');",
+              "err": {
+                "message": "TypeError: _LoginPage.default.realizarLogin is not a function",
+                "estack": "TypeError: _LoginPage.default.realizarLogin is not a function\n    at Context.eval (webpack://sauce-cypress-automation/./cypress/e2e/login.cy.js:23:14)\n    at runnable.fn (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:140440:19)\n    at callFn (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:159518:21)\n    at Runnable.run (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:159505:7)\n    at <unknown> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:165577:30)\n    at PassThroughHandlerContext.finallyHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1546:18)",
+                "diff": null
+              },
+              "uuid": "884b5a23-ac88-440a-897a-4088f867c3d2",
+              "parentUUID": "189aa8d5-fb4a-4f1c-bce0-3a11f7a74f77",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve validar campo senha obrigatório",
+              "fullTitle": "US-001 - Funcionalidade: Página de Login Deve validar campo senha obrigatório",
+              "timedOut": null,
+              "duration": 631,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "_LoginPage.default.realizarLogin('standard_user', '');\n_LoginPage.default.validarMensagemErro('Epic sadface: Password is required');",
+              "err": {
+                "message": "TypeError: _LoginPage.default.realizarLogin is not a function",
+                "estack": "TypeError: _LoginPage.default.realizarLogin is not a function\n    at Context.eval (webpack://sauce-cypress-automation/./cypress/e2e/login.cy.js:28:14)\n    at runnable.fn (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:140440:19)\n    at callFn (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:159518:21)\n    at Runnable.run (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:159505:7)\n    at <unknown> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:165577:30)\n    at PassThroughHandlerContext.finallyHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1546:18)",
+                "diff": null
+              },
+              "uuid": "389f7934-f311-4443-b22d-9d5b86a29a53",
+              "parentUUID": "189aa8d5-fb4a-4f1c-bce0-3a11f7a74f77",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve realizar logout com sucesso",
+              "fullTitle": "US-001 - Funcionalidade: Página de Login Deve realizar logout com sucesso",
+              "timedOut": null,
+              "duration": 488,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "_LoginPage.default.realizarLogin('standard_user', 'secret_sauce');\ncy.logout();\ncy.get('[data-test=\"login-button\"]').should('have.value', 'Login');",
+              "err": {
+                "message": "TypeError: _LoginPage.default.realizarLogin is not a function",
+                "estack": "TypeError: _LoginPage.default.realizarLogin is not a function\n    at Context.eval (webpack://sauce-cypress-automation/./cypress/e2e/login.cy.js:33:14)\n    at runnable.fn (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:140440:19)\n    at callFn (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:159518:21)\n    at Runnable.run (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:159505:7)\n    at <unknown> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:165577:30)\n    at PassThroughHandlerContext.finallyHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1546:18)",
+                "diff": null
+              },
+              "uuid": "eef3d3e9-5464-4d50-a599-e6e9a957eabf",
+              "parentUUID": "189aa8d5-fb4a-4f1c-bce0-3a11f7a74f77",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve exibir mensagem para credenciais inválidas",
+              "fullTitle": "US-001 - Funcionalidade: Página de Login Deve exibir mensagem para credenciais inválidas",
+              "timedOut": null,
+              "duration": 648,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "_LoginPage.default.realizarLogin('standard_user', 'senha_errada');\n_LoginPage.default.validarMensagemErro('Epic sadface: Username and password do not match');",
+              "err": {
+                "message": "TypeError: _LoginPage.default.realizarLogin is not a function",
+                "estack": "TypeError: _LoginPage.default.realizarLogin is not a function\n    at Context.eval (webpack://sauce-cypress-automation/./cypress/e2e/login.cy.js:39:14)\n    at runnable.fn (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:140440:19)\n    at callFn (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:159518:21)\n    at Runnable.run (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:159505:7)\n    at <unknown> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:165577:30)\n    at PassThroughHandlerContext.finallyHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1546:18)",
+                "diff": null
+              },
+              "uuid": "81b9629d-e26f-4129-8be1-bccc9198c24a",
+              "parentUUID": "189aa8d5-fb4a-4f1c-bce0-3a11f7a74f77",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve fechar alerta de erro ao clicar no botão X",
+              "fullTitle": "US-001 - Funcionalidade: Página de Login Deve fechar alerta de erro ao clicar no botão X",
+              "timedOut": null,
+              "duration": 637,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "_LoginPage.default.realizarLogin('', '');\ncy.get('.error-button').click();\ncy.get('[data-test=\"error\"]').should('not.exist');",
+              "err": {
+                "message": "TypeError: _LoginPage.default.realizarLogin is not a function",
+                "estack": "TypeError: _LoginPage.default.realizarLogin is not a function\n    at Context.eval (webpack://sauce-cypress-automation/./cypress/e2e/login.cy.js:44:14)\n    at runnable.fn (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:140440:19)\n    at callFn (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:159518:21)\n    at Runnable.run (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:159505:7)\n    at <unknown> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:165577:30)\n    at PassThroughHandlerContext.finallyHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1546:18)",
+                "diff": null
+              },
+              "uuid": "b76f6880-d503-416e-88b5-2c8212dce17b",
+              "parentUUID": "189aa8d5-fb4a-4f1c-bce0-3a11f7a74f77",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "3526b76b-151e-42d6-8dfd-7455b4db70a2",
+            "d90dd445-1daa-4d0a-9c90-f4d3b8f48359",
+            "884b5a23-ac88-440a-897a-4088f867c3d2",
+            "389f7934-f311-4443-b22d-9d5b86a29a53",
+            "eef3d3e9-5464-4d50-a599-e6e9a957eabf",
+            "81b9629d-e26f-4129-8be1-bccc9198c24a",
+            "b76f6880-d503-416e-88b5-2c8212dce17b"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 6829,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.1"
+    }
+  }
+}

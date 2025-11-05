@@ -1,0 +1,181 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-11-05T00:09:07.860Z",
+    "end": "2025-11-05T00:09:17.890Z",
+    "duration": 10030,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "6ccdba93-3112-4d60-8136-f3ba945ff6f2",
+      "title": "",
+      "fullFile": "cypress\\e2e\\filtro_produto.cy.js",
+      "file": "cypress\\e2e\\filtro_produto.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "23017e57-3a65-4605-9758-e9f0b261aabe",
+          "title": "US-004 - Funcionalidade: Ordenação de produtos",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve ordenar produtos por preço decrescente (High to Low)",
+              "fullTitle": "US-004 - Funcionalidade: Ordenação de produtos Deve ordenar produtos por preço decrescente (High to Low)",
+              "timedOut": null,
+              "duration": 3625,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[data-test=\"product-sort-container\"]').select('hilo');\ncy.get('#inventory_container .inventory_item_price').then($prices => {\n  const prices = [...$prices].map(el => parseFloat(el.innerText.replace('$', '').trim()));\n  const sorted = [...prices].sort((a, b) => b - a);\n  expect(prices).to.deep.equal(sorted);\n});",
+              "err": {},
+              "uuid": "76f419b7-4fde-485b-949c-ff20a230dd1a",
+              "parentUUID": "23017e57-3a65-4605-9758-e9f0b261aabe",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve ordenar produtos por preço crescente (Low to High)",
+              "fullTitle": "US-004 - Funcionalidade: Ordenação de produtos Deve ordenar produtos por preço crescente (Low to High)",
+              "timedOut": null,
+              "duration": 1532,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[data-test=\"product-sort-container\"]').select('lohi');\ncy.get('#inventory_container .inventory_item_price').then($prices => {\n  const prices = [...$prices].map(el => parseFloat(el.innerText.replace('$', '').trim()));\n  const sorted = [...prices].sort((a, b) => a - b);\n  expect(prices).to.deep.equal(sorted);\n});",
+              "err": {},
+              "uuid": "2e167bf8-0a71-4ff7-afe8-614e56764162",
+              "parentUUID": "23017e57-3a65-4605-9758-e9f0b261aabe",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve ordenar produtos alfabeticamente (A-Z)",
+              "fullTitle": "US-004 - Funcionalidade: Ordenação de produtos Deve ordenar produtos alfabeticamente (A-Z)",
+              "timedOut": null,
+              "duration": 1329,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[data-test=\"product-sort-container\"]').select('az');\ncy.get('.inventory_item_name').then($names => {\n  const names = [...$names].map(el => el.innerText.trim());\n  const sorted = [...names].sort((a, b) => a.localeCompare(b));\n  expect(names).to.deep.equal(sorted);\n});",
+              "err": {},
+              "uuid": "f9b085a6-f81a-47f6-8f47-ac749fe9c030",
+              "parentUUID": "23017e57-3a65-4605-9758-e9f0b261aabe",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve ordenar produtos alfabeticamente (Z-A)",
+              "fullTitle": "US-004 - Funcionalidade: Ordenação de produtos Deve ordenar produtos alfabeticamente (Z-A)",
+              "timedOut": null,
+              "duration": 1815,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[data-test=\"product-sort-container\"]').select('za');\ncy.get('.inventory_item_name').then($names => {\n  const names = [...$names].map(el => el.innerText.trim());\n  const sorted = [...names].sort((a, b) => b.localeCompare(a));\n  expect(names).to.deep.equal(sorted);\n});",
+              "err": {},
+              "uuid": "68d9ebe8-ef90-4c56-bc8c-4b92470cebc0",
+              "parentUUID": "23017e57-3a65-4605-9758-e9f0b261aabe",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve manter ordem padrão ao carregar a página",
+              "fullTitle": "US-004 - Funcionalidade: Ordenação de produtos Deve manter ordem padrão ao carregar a página",
+              "timedOut": null,
+              "duration": 1209,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.inventory_item_name').should('have.length.greaterThan', 0);",
+              "err": {},
+              "uuid": "783416f7-c352-4bbf-9010-1f9e87ab1081",
+              "parentUUID": "23017e57-3a65-4605-9758-e9f0b261aabe",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "76f419b7-4fde-485b-949c-ff20a230dd1a",
+            "2e167bf8-0a71-4ff7-afe8-614e56764162",
+            "f9b085a6-f81a-47f6-8f47-ac749fe9c030",
+            "68d9ebe8-ef90-4c56-bc8c-4b92470cebc0",
+            "783416f7-c352-4bbf-9010-1f9e87ab1081"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 9510,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.1"
+    }
+  }
+}

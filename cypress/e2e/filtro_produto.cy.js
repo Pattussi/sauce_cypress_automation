@@ -1,72 +1,60 @@
-/// <reference types="cypress"/>
+/// <reference types="cypress" />
 
-describe('US-004 - Ordenação dos produtos', () => {
+import LoginPage from '../pages/LoginPage'
+import ProductsPage from '../pages/ProductsPage'
+
+describe('US-004 - Funcionalidade: Ordenação de produtos', () => {
 
   beforeEach(() => {
-    cy.visit('/')
+    LoginPage.acessarSite()
+    LoginPage.fazerLogin('standard_user', 'secret_sauce')
   })
 
-  it('Colocar os produtos em ordem decrescente de preço (High to Low)', () => {
-    cy.login('standard_user', 'secret_sauce')
-    cy.get('[data-test="product-sort-container"]').select('hilo')
-
-    cy.get('#inventory_container .inventory_item_price')
-      .then(($prices) => {
-        const prices = [...$prices].map(el =>
-          parseFloat(el.innerText.replace('$', '').trim())
-        )
-
-        const sortedPrices = [...prices].sort((a, b) => b - a)
-        expect(prices, 'Produtos devem estar em ordem decrescente de preço')
-          .to.deep.equal(sortedPrices)
-      })
+  it('Deve ordenar produtos por preço decrescente (High to Low)', () => {
+    ProductsPage.selecionarFiltro('hilo')
+    cy.get('.inventory_item_price').then(prices => {
+      const valores = [...prices].map(el => parseFloat(el.innerText.replace('$', '')))
+      const ordenado = [...valores].sort((a, b) => b - a)
+      expect(valores).to.deep.equal(ordenado)
+    })
   })
 
-  it('Colocar os produtos em ordem crescente de preço (Low to High)', () => {
-    cy.login('standard_user', 'secret_sauce')
-    cy.get('[data-test="product-sort-container"]').select('lohi')
-
-    cy.get('#inventory_container .inventory_item_price')
-      .then(($prices) => {
-        const prices = [...$prices].map(el =>
-          parseFloat(el.innerText.replace('$', '').trim())
-        )
-
-        const sortedPrices = [...prices].sort((a, b) => a - b)
-        expect(prices, 'Produtos devem estar em ordem crescente de preço')
-          .to.deep.equal(sortedPrices)
-      })
+  it('Deve ordenar produtos por preço crescente (Low to High)', () => {
+    ProductsPage.selecionarFiltro('lohi')
+    cy.get('.inventory_item_price').then(prices => {
+      const valores = [...prices].map(el => parseFloat(el.innerText.replace('$', '')))
+      const ordenado = [...valores].sort((a, b) => a - b)
+      expect(valores).to.deep.equal(ordenado)
+    })
   })
 
-  it('Colocar os produtos em ordem alfabética de A-Z', () => {
-    cy.login('standard_user', 'secret_sauce')
-    cy.get('[data-test="product-sort-container"]').select('az')
-
-    cy.get('.inventory_item_name')
-      .then(($names) => {
-        const names = [...$names].map(el => el.innerText.trim())
-
-        const sortedNames = [...names].sort((a, b) => a.localeCompare(b))
-        expect(names, 'Produtos devem estar em ordem alfabética de A-Z')
-          .to.deep.equal(sortedNames)
-      })
+  it('Deve ordenar produtos alfabeticamente (A-Z)', () => {
+    ProductsPage.selecionarFiltro('az')
+    cy.get('.inventory_item_name').then(items => {
+      const nomes = [...items].map(el => el.innerText)
+      const ordenado = [...nomes].sort()
+      expect(nomes).to.deep.equal(ordenado)
+    })
   })
 
-  it('Colocar os produtos em ordem alfabética de Z-A', () => {
-    cy.login('standard_user', 'secret_sauce')
-    cy.get('[data-test="product-sort-container"]').select('za')
-
-    cy.get('.inventory_item_name')
-      .then(($names) => {
-        const names = [...$names].map(el => el.innerText.trim())
-
-        const sortedNames = [...names].sort((a, b) => b.localeCompare(a))
-        expect(names, 'Produtos devem estar em ordem alfabética de Z-A')
-          .to.deep.equal(sortedNames)
-      })
+  it('Deve ordenar produtos alfabeticamente (Z-A)', () => {
+    ProductsPage.selecionarFiltro('za')
+    cy.get('.inventory_item_name').then(items => {
+      const nomes = [...items].map(el => el.innerText)
+      const ordenado = [...nomes].sort().reverse()
+      expect(nomes).to.deep.equal(ordenado)
+    })
   })
-  it('Deve manter ordem padrão ao carregar a página', () => {
-  cy.login('standard_user', 'secret_sauce')
-  cy.get('.inventory_item_name').should('have.length.greaterThan', 0)
+
+it('Deve manter ordem padrão ao carregar a página', () => {
+  cy.url().should('include', '/inventory.html')
+  ProductsPage.validarOrdemEsperada([
+    'Sauce Labs Backpack',
+    'Sauce Labs Bike Light',
+    'Sauce Labs Bolt T-Shirt',
+    'Sauce Labs Fleece Jacket',
+    'Sauce Labs Onesie',
+    'Test.allTheThings() T-Shirt (Red)'
+  ])
 })
 })

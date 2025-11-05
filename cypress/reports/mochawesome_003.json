@@ -1,0 +1,219 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 7,
+    "passes": 7,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-11-05T00:09:23.777Z",
+    "end": "2025-11-05T00:09:33.643Z",
+    "duration": 9866,
+    "testsRegistered": 7,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "1bcfaf6d-79b9-4688-bafc-ae204b603098",
+      "title": "",
+      "fullFile": "cypress\\e2e\\login.cy.js",
+      "file": "cypress\\e2e\\login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "89ab472e-9ea5-474c-8d39-7c83e1b2e013",
+          "title": "US-001 - Funcionalidade: Página de Login",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve realizar login com sucesso",
+              "fullTitle": "US-001 - Funcionalidade: Página de Login Deve realizar login com sucesso",
+              "timedOut": null,
+              "duration": 3266,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.log(' Tentando login com credenciais válidas');\ncy.login('standard_user', 'secret_sauce');\ncy.get('[data-test=\"title\"]').should('contain.text', 'Products');",
+              "err": {},
+              "uuid": "1b13c1ba-4882-4a03-bcd5-7cb4d12ade65",
+              "parentUUID": "89ab472e-9ea5-474c-8d39-7c83e1b2e013",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve exibir mensagem para usuário bloqueado",
+              "fullTitle": "US-001 - Funcionalidade: Página de Login Deve exibir mensagem para usuário bloqueado",
+              "timedOut": null,
+              "duration": 1273,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.login('locked_out_user', 'secret_sauce');\ncy.get('[data-test=\"error\"]').should('contain.text', 'Epic sadface: Sorry, this user has been locked out.');",
+              "err": {},
+              "uuid": "b7fb701f-be18-4a41-ad02-ba8463e61c45",
+              "parentUUID": "89ab472e-9ea5-474c-8d39-7c83e1b2e013",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve validar campo usuário obrigatório",
+              "fullTitle": "US-001 - Funcionalidade: Página de Login Deve validar campo usuário obrigatório",
+              "timedOut": null,
+              "duration": 953,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.login('', 'secret_sauce');\ncy.get('[data-test=\"error\"]').should('contain.text', 'Epic sadface: Username is required');",
+              "err": {},
+              "uuid": "fc624a72-d2c7-4599-8f6b-e3a728740ca3",
+              "parentUUID": "89ab472e-9ea5-474c-8d39-7c83e1b2e013",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve validar campo senha obrigatório",
+              "fullTitle": "US-001 - Funcionalidade: Página de Login Deve validar campo senha obrigatório",
+              "timedOut": null,
+              "duration": 708,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.login('standard_user', '');\ncy.get('[data-test=\"error\"]').should('contain.text', 'Epic sadface: Password is required');",
+              "err": {},
+              "uuid": "6814fbc8-424b-43be-86c5-c1c56e66657a",
+              "parentUUID": "89ab472e-9ea5-474c-8d39-7c83e1b2e013",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve realizar logout com sucesso",
+              "fullTitle": "US-001 - Funcionalidade: Página de Login Deve realizar logout com sucesso",
+              "timedOut": null,
+              "duration": 1626,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.login('standard_user', 'secret_sauce');\ncy.logout();\ncy.get('[data-test=\"login-button\"]').should('have.value', 'Login');",
+              "err": {},
+              "uuid": "6e32f4f1-c0eb-4ae3-872a-9cbc72c85021",
+              "parentUUID": "89ab472e-9ea5-474c-8d39-7c83e1b2e013",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve exibir mensagem para credenciais inválidas",
+              "fullTitle": "US-001 - Funcionalidade: Página de Login Deve exibir mensagem para credenciais inválidas",
+              "timedOut": null,
+              "duration": 970,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.login('standard_user', 'senha_errada');\ncy.get('[data-test=\"error\"]').should('contain.text', 'Epic sadface: Username and password do not match');",
+              "err": {},
+              "uuid": "ed2f2f15-76d1-411d-8ae8-165f4c65fc3b",
+              "parentUUID": "89ab472e-9ea5-474c-8d39-7c83e1b2e013",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve fechar alerta de erro ao clicar no botão X",
+              "fullTitle": "US-001 - Funcionalidade: Página de Login Deve fechar alerta de erro ao clicar no botão X",
+              "timedOut": null,
+              "duration": 555,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.login('', '');\ncy.get('.error-button').click();\ncy.get('[data-test=\"error\"]').should('not.exist');",
+              "err": {},
+              "uuid": "3edf3ab4-ab78-4137-a0ed-bceb802faf43",
+              "parentUUID": "89ab472e-9ea5-474c-8d39-7c83e1b2e013",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "1b13c1ba-4882-4a03-bcd5-7cb4d12ade65",
+            "b7fb701f-be18-4a41-ad02-ba8463e61c45",
+            "fc624a72-d2c7-4599-8f6b-e3a728740ca3",
+            "6814fbc8-424b-43be-86c5-c1c56e66657a",
+            "6e32f4f1-c0eb-4ae3-872a-9cbc72c85021",
+            "ed2f2f15-76d1-411d-8ae8-165f4c65fc3b",
+            "3edf3ab4-ab78-4137-a0ed-bceb802faf43"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 9351,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.1"
+    }
+  }
+}

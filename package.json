@@ -1,15 +1,21 @@
 {
-  "name": "estrategia",
+  "name": "sauce-cypress-automation",
   "version": "1.0.0",
+  "description": "Automação de testes E2E para o site Sauce Demo com Cypress.",
   "main": "index.js",
+  "author": "Leonardo Gallardo",
+  "license": "MIT",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cypress run",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run --browser chrome",
+    "test:ci": "cypress run --headless --browser chrome"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "dependencies": {
-    "cypress": "^14.3.3"
-  }
+  "devDependencies": {
+  "cypress": "^14.3.3",
+  "mochawesome": "^7.1.3",
+  "mochawesome-merge": "^4.3.0",
+  "mochawesome-report-generator": "^6.2.0"
+}
+
 }

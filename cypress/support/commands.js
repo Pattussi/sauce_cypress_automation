@@ -1,57 +1,33 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
 Cypress.Commands.add('login', (usuario, senha) => {
-  
-  if (usuario) {
-    cy.get('[data-test="username"]').type(usuario)
-  }
-
-  if (senha) {
-    cy.get('[data-test="password"]').type(senha)
-  }
-
-  cy.get('[data-test="login-button"]').click()
-})
-
+  cy.log(`🔐 Fazendo login com usuário: ${usuario}`);
+  if (usuario) cy.get('[data-test="username"]').type(usuario);
+  if (senha) cy.get('[data-test="password"]').type(senha);
+  cy.get('[data-test="login-button"]').click();
+});
 
 Cypress.Commands.add('preencherCadastro', (nome, sobrenome, zip_code) => {
+  cy.log('🧾 Preenchendo dados de checkout');
+  if (nome) cy.get('[data-test="firstName"]').type(nome);
+  if (sobrenome) cy.get('[data-test="lastName"]').type(sobrenome);
+  if (zip_code) cy.get('[data-test="postalCode"]').type(zip_code);
+  cy.get('[data-test="continue"]').click();
+});
 
-  if (nome) {
-    cy.get('[data-test="firstName"]').type(nome)
-  }
+Cypress.Commands.add('logout', () => {
+  cy.log('🚪 Efetuando logout');
+  cy.get('#react-burger-menu-btn').click();
+  cy.get('#logout_sidebar_link').click();
+});
+Cypress.Commands.add('adicionarProdutoAoCarrinho', (produto) => {
+  cy.log(`🛒 Adicionando produto ao carrinho: ${produto}`);
+  cy.contains('.inventory_item', produto)
+    .find('button')
+    .click();
+});
 
-  if (sobrenome) {
-    cy.get('[data-test="lastName"]').type(sobrenome)
-  }
-
-  if (zip_code) {
-    cy.get('[data-test="postalCode"]').type(zip_code)
-  }
-
-  cy.get('[data-test="continue"]').click()
-})
-
-
-
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+Cypress.Commands.add('removerProdutoDoCarrinho', (produto) => {
+  cy.log(`🛒 Removendo produto do carrinho: ${produto}`);
+  cy.contains('.inventory_item', produto)
+    .find('button')
+    .click();
+}); 

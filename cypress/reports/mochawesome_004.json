@@ -1,0 +1,205 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-11-05T00:21:20.618Z",
+    "end": "2025-11-05T00:21:21.469Z",
+    "duration": 851,
+    "testsRegistered": 6,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 5,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "ab9ded1a-7163-4962-82be-640ea16b0f10",
+      "title": "",
+      "fullFile": "cypress\\e2e\\cadastro_check_out.cy.js",
+      "file": "cypress\\e2e\\cadastro_check_out.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "7d1a0105-b961-4e12-ae20-6afad96484f3",
+          "title": "US-003 - Funcionalidade: Cadastro no Checkout",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve realizar cadastro com sucesso (todos campos preenchidos)",
+              "fullTitle": "US-003 - Funcionalidade: Cadastro no Checkout Deve realizar cadastro com sucesso (todos campos preenchidos)",
+              "timedOut": null,
+              "duration": 591,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "_CheckoutPage.default.preencherCadastro('Leonardo', 'Pattussi', '96000000');\ncy.get('[data-test=\"finish\"]').click();\ncy.get('.complete-header').should('contain.text', 'Thank you for your order!');",
+              "err": {
+                "message": "TypeError: _LoginPage.default.realizarLogin is not a function\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `US-003 - Funcionalidade: Ca...`",
+                "estack": "TypeError: _LoginPage.default.realizarLogin is not a function\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `US-003 - Funcionalidade: Ca...`\n    at Context.eval (webpack://sauce-cypress-automation/./cypress/e2e/cadastro_check_out.cy.js:11:14)\n    at runnable.fn (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:140440:19)\n    at callFn (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:159518:21)\n    at Runnable.run (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:159505:7)\n    at <unknown> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:165577:30)\n    at PassThroughHandlerContext.finallyHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1546:18)",
+                "diff": null
+              },
+              "uuid": "82edade7-3faf-48bb-9977-052462e7e514",
+              "parentUUID": "7d1a0105-b961-4e12-ae20-6afad96484f3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve exibir erro ao deixar todos os campos vazios",
+              "fullTitle": "US-003 - Funcionalidade: Cadastro no Checkout Deve exibir erro ao deixar todos os campos vazios",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[data-test=\"continue\"]').click();\n_CheckoutPage.default.validarMensagemErro('Error: First Name is required');",
+              "err": {},
+              "uuid": "a6de7a36-9de8-4a06-aed9-6795c1925b21",
+              "parentUUID": "7d1a0105-b961-4e12-ae20-6afad96484f3",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Deve validar ausência de nome",
+              "fullTitle": "US-003 - Funcionalidade: Cadastro no Checkout Deve validar ausência de nome",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_CheckoutPage.default.preencherCadastro('', 'Pattussi', '96000000');\n_CheckoutPage.default.validarMensagemErro('Error: First Name is required');",
+              "err": {},
+              "uuid": "912eb03d-227e-4375-8ca0-befe48f5540e",
+              "parentUUID": "7d1a0105-b961-4e12-ae20-6afad96484f3",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Deve validar ausência de sobrenome",
+              "fullTitle": "US-003 - Funcionalidade: Cadastro no Checkout Deve validar ausência de sobrenome",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_CheckoutPage.default.preencherCadastro('Leonardo', '', '96000000');\n_CheckoutPage.default.validarMensagemErro('Error: Last Name is required');",
+              "err": {},
+              "uuid": "80150064-6c4a-49e0-a568-6fa1eafb66da",
+              "parentUUID": "7d1a0105-b961-4e12-ae20-6afad96484f3",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Deve validar ausência de CEP",
+              "fullTitle": "US-003 - Funcionalidade: Cadastro no Checkout Deve validar ausência de CEP",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_CheckoutPage.default.preencherCadastro('Leonardo', 'Pattussi', '');\n_CheckoutPage.default.validarMensagemErro('Error: Postal Code is required');",
+              "err": {},
+              "uuid": "b3d28b45-2c87-48ed-82e7-cff637f316a4",
+              "parentUUID": "7d1a0105-b961-4e12-ae20-6afad96484f3",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Deve permitir cancelar o checkout e voltar ao carrinho",
+              "fullTitle": "US-003 - Funcionalidade: Cadastro no Checkout Deve permitir cancelar o checkout e voltar ao carrinho",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_CheckoutPage.default.cancelarCheckout();\n_CheckoutPage.default.validarRetornoAoCarrinho();",
+              "err": {},
+              "uuid": "fefa1173-1f1f-4fc6-8208-90b58859bec5",
+              "parentUUID": "7d1a0105-b961-4e12-ae20-6afad96484f3",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "82edade7-3faf-48bb-9977-052462e7e514"
+          ],
+          "pending": [],
+          "skipped": [
+            "a6de7a36-9de8-4a06-aed9-6795c1925b21",
+            "912eb03d-227e-4375-8ca0-befe48f5540e",
+            "80150064-6c4a-49e0-a568-6fa1eafb66da",
+            "b3d28b45-2c87-48ed-82e7-cff637f316a4",
+            "fefa1173-1f1f-4fc6-8208-90b58859bec5"
+          ],
+          "duration": 591,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.1"
+    }
+  }
+}
