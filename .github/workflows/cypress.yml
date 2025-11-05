@@ -24,13 +24,13 @@ jobs:
       - name: Executar testes Cypress (modo headless)
         run: npx cypress run --browser chrome
 
-      - name: Mesclar relatórios JSON (mochawesome)
+      - name: Mesclar relatórios JSON (Mochawesome)
         run: |
           npx mochawesome-merge cypress/reports/*.json > cypress/reports/report.json
 
-      - name: Gerar relatório HTML (Marge Reporter)
+      - name: Gerar relatório HTML (Mochawesome Report Generator)
         run: |
-          npx marge-reporter cypress/reports/report.json \
+          npx mochawesome-report-generator cypress/reports/report.json \
             --reportDir cypress/reports/html \
             --reportTitle "Relatório de Testes SauceDemo" \
             --inlineAssets true
