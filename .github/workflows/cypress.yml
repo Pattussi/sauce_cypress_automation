@@ -1,14 +1,14 @@
-name: Cypress Tests
+name: cypress-tests
 
 on:
   push:
-    branches: [ main, master ]
+    branches: [ main ]
   pull_request:
-    branches: [ main, master ]
 
 jobs:
-  cypress-run:
+  test:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -22,15 +22,36 @@ jobs:
         run: npm ci
 
       - name: Run Cypress tests (headless)
-        run: npx cypress run --browser chrome
+        run: npm run test:ci
 
-      - name: Generate Mochawesome HTML report
+      # Aguarda 2 segundos para garantir que os arquivos JSON estejam disponíveis
+      - name: Wait before merge
+        run: sleep 2
+
+      - name: Merge mochawesome JSON reports
         run: |
-          npx mochawesome-merge cypress/reports/*.json > cypress/reports/report.json
-          npx marge cypress/reports/report.json --reportDir cypress/reports/html
+          npx mochawesome-merge cypress/reports/*.json --output cypress/reports/report.json
+        continue-on-error: true  # evita falha se o arquivo estiver temporariamente incompleto
 
-      - name: Upload test reports
+      # Gera o relatório HTML final
+      - name: Generate HTML report
+        run: |
+          if [ -f cypress/reports/report.json ]; then
+            npx marge cypress/reports/report.json --reportDir cypress/reports/html --reportTitle "Relatório de Testes SauceDemo"
+          else
+            echo "⚠️ Nenhum arquivo report.json encontrado, pulando geração do HTML."
+          fi
+
+      # Publica o relatório como artefato do Actions
+      - name: Upload HTML report
         uses: actions/upload-artifact@v4
         with:
           name: mochawesome-report
           path: cypress/reports/html
+
+      # Publica vídeos da execução
+      - name: Upload Cypress videos
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-videos
+          path: cypress/videos
